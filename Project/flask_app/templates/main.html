@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/main.css')}}">
     <title>Document</title>
 </head>
 <body>
@@ -14,6 +15,7 @@
             <a href="/carp_services/zones">Zones</a>
             <a href="/carp_services/updates">Updates</a>
             <a href="/carp_services/account">Account</a> 
+            <a href="/carp_services/main">Main</a> 
         </div>
     </div>
     <div class="container">
@@ -24,19 +26,15 @@
         </div>
         <div class="col1">
             <h3>Upcoming Service</h3>
-            {% for x in range(0, 3) %}
-                {% for o in orders %}
-                <span>{{ o.order_type }}</span>
-                <span>{{ o.order_date }}</span>
-                {% endfor %}
+            {% for o in orders %}
+            <span>{{ o.order_type }}</span>
+            <span>{{ o.order_date }}</span>
             {% endfor %}
         </div>
         <div class="col2">
             <h3>Recent Updates</h3>
-            {% for x in range(0, 3) %}
-                {% for u in updates %}
-                <span>{{ u.update_desc }}</span>
-                {% endfor %}
+            {% for u in updates %}
+            <span>{{ u.update_desc }}</span>
             {% endfor %}
         </div>
     </div>

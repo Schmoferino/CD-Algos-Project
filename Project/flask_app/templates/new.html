@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/new.css')}}">
     <title>Document</title>
 </head>
 <body>
@@ -13,9 +14,17 @@
             <a href="/carp_services/schedule">Schedule</a>
             <a href="/carp_services/zones">Zones</a>
             <a href="/carp_services/updates">Updates</a>
-            <a href="/carp_services/account">Account</a> 
+            <a href="/carp_services/account">Account</a>
+            <a href="/carp_services/main">Main</a>  
         </div>
     </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages%}
+            <p>{{message}}</p>
+            {% endfor %}
+        {% endif%}
+    {% endwith %}
     <div class="container">
         <div class="sidebox">
             <strong>Welcome, {{ user.first_name }}</strong>

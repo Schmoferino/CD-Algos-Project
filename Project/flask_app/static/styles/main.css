@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px auto;
+}
+
+body {
+    margin-top: 24px;
+    padding: 0% 10%;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+
+.cont {
+    display: flex;
+    padding-top: 12px;
+    margin: 12px;
+    justify-content: space-around;
+    padding: 32px 0px;
+}
+.col1, .col2 {
+    width: 80%;
+    display: flex;
+    align-items: left;
+    background-color: rgb(255,253,208);
+    padding: 8px;
+    margin: 12px;
+    border: 8px solid rgb(204,136,85);
+    border-radius: 8px;
+}

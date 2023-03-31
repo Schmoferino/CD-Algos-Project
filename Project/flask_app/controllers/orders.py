@@ -11,7 +11,8 @@ def main():
     orders = Order.order_by_soonest()
     print(orders)
     data = {
-        'id': session['id']
+        'id': session['id'],
+        'user_id': session['id'],
     }
     user = User.user_by_id(data)
     updates = Order.all_updates()
@@ -70,3 +71,13 @@ def post():
     Order.save_order(data)
     flash("Posted " + request.form['order_type'] + " !")
     return redirect('/carp_services/schedule')
+
+#@app.route('/carp_services/new_update')
+#def new_update():
+#        data = {
+#        'id': session['id']
+#    }
+#    user = User.user_by_id(data)
+#    if session['id'] != 1:
+#        return redirect ('/carp_services/')
+#    return render_template('newupdate.html', user = user)

@@ -34,7 +34,7 @@ def register():
     user = User.save_user(data)
     print(data)
 
-    session['id'] = user['id']
+    session['id'] = user.id
     session['login'] = True
     return redirect('/carp_services/main')
 
@@ -54,7 +54,7 @@ def login():
         flash('Credentials not found')
         print('BCRYPT')
         return redirect('/carp_services/login')
-    session['id'] = check['id']
+    session['id'] = check.id
     session['login'] = True
     return redirect('/carp_services/main')
 
@@ -62,6 +62,7 @@ def login():
 @app.route('/carp_services/account')
 def view_user():
     data = {
+        'id': session['id'],
         'user_id': session['id'],
     }
     user = User.user_by_id(data)
