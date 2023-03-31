@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Carpentry Service Orders</h2>
+        <div class="btns">
+            <a href="/carp_services/schedule">Schedule</a>
+            <a href="/carp_services/zones">Zones</a>
+            <a href="/carp_services/updates">Updates</a>
+            <a href="/carp_services/account">Account</a> 
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebox">
+            <strong>Welcome, {{ user.first_name }}</strong>
+            <a href="/carp_services/new_order">Place Order</a>
+            <a href="/carp_services/logout">Log Out</a>
+        </div>
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for o in orders %}
+                    <tr>
+                        <td>{{ o.order_type }}</td>
+                        <td>{{ o.order_date }}</td>
+                        <td>{{ o.order_desc }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

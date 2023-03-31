@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Carpentry Service Orders</h2>
+        <div class="btns">
+            <a href="/carp_services/schedule">Schedule</a>
+            <a href="/carp_services/zones">Zones</a>
+            <a href="/carp_services/updates">Updates</a>
+            <a href="/carp_services/account">Account</a> 
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebox">
+            <strong>Welcome, {{ user.first_name }}</strong>
+            <a href="/carp_services/new_order">Place Order</a>
+            <a href="/carp_services/logout">Log Out</a>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d92397.48119643771!2d-93.662731622672!3d45.324136468915306!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDE5JzMxLjgiTiA5M8KwMzUnMjcuNSJX!5e0!3m2!1sen!2sus!4v1680223100880!5m2!1sen!2sus"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col2">
+            <h3>Zones</h3>
+            <p>These are the zones I will serve customers in. If you're outside of the zone, contact me at (insert unused number here) or my email barryhunt@gmail.com
+                
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Carpentry Service Orders</h2>
+        <div class="btns">
+            <a href="/carp_services/schedule">Schedule</a>
+            <a href="/carp_services/zones">Zones</a>
+            <a href="/carp_services/updates">Updates</a>
+            <a href="/carp_services/account">Account</a> 
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebox">
+            <strong>Welcome, {{ user.first_name }}</strong>
+            <a href="/carp_services/new_order">Place Order</a>
+            <a href="/carp_services/logout">Log Out</a>
+        </div>
+        <div class="col1">
+            <h3>Schedule an Order</h3>
+            <form action="/carp_services/post" method="POST">
+                <p>Order Type:</p>
+                <input type="radio" id="estimate">
+                <label for="estimate">Estimate</label>
+                <input type="radio" id="carpentry">
+                <label for="carpentry">Carpentry</label>
+                <input type="radio" id="electrical">
+                <label for="electrical">Electrical</label>
+                <input type="radio" id="ventilation">
+                <label for="ventilation">Ventilation</label>
+                <label for="order_date">Order Date:</label>
+                <input type="date" id="order_date">
+                <label for="order_desc">Order Description</label>
+                <input type="text" id="order_desc">
+                <input type="submit" value="Post">
+            </form>
+        </div>
+        <div class="col2">
+            <h3>Ordering</h3>
+            <p>When placing an order for service, be sure the date is available and you have your area of service clear of obstacles and objects.
+                Be sure your order date isn't already taken!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
